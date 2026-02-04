@@ -1,0 +1,8 @@
+{
+  "name": "NeuralPhone - Future Tech Store",
+  "description": "An advanced e-commerce platform for high-end mobile phones and tablets, featuring AI customer service, integrated payment gateways, and a stunning midnight-themed UI.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
