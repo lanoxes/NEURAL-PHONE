@@ -47,10 +47,18 @@ export const PRODUCTS: Product[] = [
       name: `Asus ROG Phone ${phoneNum}`,
       price: 10000000 + (i * 1500000),
       image: imageUrl,
-      description: `Ultimate gaming experience with ROG Phone ${phoneNum}. High refresh rate display and top-tier performance.`,
+      description: `Ultimate gaming experience with ROG Phone ${phoneNum}. High refresh rate display and top-tier performance. Dirancang khusus untuk para hardcore gamers dengan sistem pendingin tercanggih di kelasnya. Memiliki AirTrigger yang sangat responsif untuk kendali permainan yang presisi.`,
       category: 'Phone' as const,
       rating: 4.5 + (Math.random() * 0.5),
       reviews: generateMockReviews(),
+      specs: {
+        "Processor": "Snapdragon 8 Gen Series",
+        "RAM": "12GB / 16GB LPDDR5X",
+        "Storage": "256GB / 512GB UFS 4.0",
+        "Display": "6.78\" AMOLED 165Hz",
+        "Battery": "6000mAh with 65W HyperCharge",
+        "OS": "ROG UI based on Android"
+      }
     };
   }),
   // IPHONE 5-17
@@ -111,10 +119,18 @@ export const PRODUCTS: Product[] = [
       name: name,
       price: 5000000 + (i * 2000000),
       image: imageUrl,
-      description: `The iconic ${name}. Beautiful design and powerful ecosystem integration.`,
+      description: `The iconic ${name}. Beautiful design and powerful ecosystem integration. Hadir dengan sistem kamera Pro yang revolusioner, daya tahan baterai yang luar biasa, dan chip tercepat yang pernah ada di smartphone. Layar Super Retina XDR yang memukau memberikan pengalaman visual terbaik.`,
       category: 'Phone' as const,
       rating: 4.7,
       reviews: generateMockReviews(),
+      specs: {
+        "Chip": version >= 15 ? "A17 Pro / A18 Bionic" : "A-Series Bionic",
+        "RAM": "6GB / 8GB",
+        "Display": "Super Retina XDR OLED",
+        "Camera": "Triple 48MP System",
+        "Body": "Titanium / Stainless Steel",
+        "Connector": version >= 15 ? "USB-C" : "Lightning"
+      }
     };
   }),
   // SAMSUNG S to S21 Ultra
@@ -127,10 +143,18 @@ export const PRODUCTS: Product[] = [
       name: `Samsung Galaxy ${model}`,
       price: 8000000 + (i * 1200000),
       image: `https://picsum.photos/seed/samsung${i}/400/400`,
-      description: `Premium Android experience with Samsung Galaxy ${model}. Incredible camera and display.`,
+      description: `Premium Android experience with Samsung Galaxy ${model}. Incredible camera and display. Menawarkan fitur produktivitas terbaik dengan dukungan S-Pen pada model Ultra. Fotografi malam hari (Nightography) yang luar biasa dan zoom hingga 100x yang legendaris.`,
       category: 'Phone' as const,
       rating: 4.6,
       reviews: generateMockReviews(),
+      specs: {
+        "Processor": "Exynos / Snapdragon Dual Version",
+        "Display": "Dynamic AMOLED 2X",
+        "Refresh Rate": "120Hz Adaptive",
+        "Camera": "108MP / 200MP Main Sensor",
+        "Battery": "5000mAh",
+        "Water Resistance": "IP68 Certified"
+      }
     };
   }),
   // TECHNO POVA
@@ -141,10 +165,18 @@ export const PRODUCTS: Product[] = [
     name: `Tecno Pova ${i + 1}`,
     price: 2500000 + (i * 500000),
     image: `https://picsum.photos/seed/pova${i}/400/400`,
-    description: `Performance powerhouse at an affordable price. Pova ${i + 1} features a massive battery.`,
+    description: `Performance powerhouse at an affordable price. Pova ${i + 1} features a massive battery. Smartphone budget yang tidak kompromi pada performa gaming dan ketahanan baterai. Desain futuristik yang terinspirasi dari robotika mecha.`,
     category: 'Phone' as const,
     rating: 4.2,
     reviews: generateMockReviews(),
+    specs: {
+      "Processor": "MediaTek Helio / Dimensity",
+      "Battery": "6000mAh / 7000mAh",
+      "Charging": "45W Fast Charging",
+      "Display": "IPS LCD 90Hz / 120Hz",
+      "RAM": "8GB + Extended RAM",
+      "Sound": "Dual Stereo Speakers"
+    }
   })),
   // INFINIX (Sample)
   {
@@ -154,10 +186,18 @@ export const PRODUCTS: Product[] = [
     name: 'Infinix GT 20 Pro',
     price: 4500000,
     image: 'https://picsum.photos/seed/infinix/400/400',
-    description: 'Infinix latest gaming focused smartphone with Cyber Mecha design.',
+    description: 'Infinix latest gaming focused smartphone with Cyber Mecha design. Dilengkapi dengan chip gaming khusus dan pencahayaan RGB yang dapat disesuaikan di bagian belakang. Menghadirkan frame rate stabil untuk game kompetitif.',
     category: 'Phone' as const,
     rating: 4.4,
     reviews: generateMockReviews(),
+    specs: {
+      "Processor": "Dimensity 8200 Ultimate",
+      "Display": "AMOLED 144Hz",
+      "Design": "Cyber Mecha with RGB",
+      "Cooling": "VC Liquid Cooling",
+      "Bypass Charging": "Supported",
+      "RAM": "12GB LPDDR5X"
+    }
   },
   // IPAD
   ...Array.from({ length: 10 }).map((_, i) => ({
@@ -167,9 +207,17 @@ export const PRODUCTS: Product[] = [
     name: `iPad Pro Gen ${i + 1} M-Series`,
     price: 12000000 + (i * 2000000),
     image: `https://picsum.photos/seed/ipad${i}/400/400`,
-    description: `The world's most versatile tablet. iPad Pro Gen ${i + 1} with stunning display and powerful processor.`,
+    description: `The world's most versatile tablet. iPad Pro Gen ${i + 1} with stunning display and powerful processor. Alat kreativitas terbaik untuk desainer, editor video, dan mahasiswa. Dengan chip M-series yang memiliki performa setara komputer desktop.`,
     category: 'Tablet' as const,
     rating: 4.9,
     reviews: generateMockReviews(),
+    specs: {
+      "Chip": "Apple M1 / M2 / M4",
+      "Display": "Liquid Retina XDR (mini-LED)",
+      "Connector": "Thunderbolt / USB 4",
+      "Accessories": "Apple Pencil 2 & Magic Keyboard",
+      "Audio": "Four Speaker Audio",
+      "Camera": "LiDAR Scanner Included"
+    }
   })),
 ];

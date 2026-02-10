@@ -10,6 +10,7 @@ export interface Product {
   category: 'Phone' | 'Tablet';
   rating: number;
   reviews: Review[];
+  specs?: Record<string, string>;
 }
 
 export interface Review {

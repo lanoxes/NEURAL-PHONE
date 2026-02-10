@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CartItem } from '../types';
+import { CartItem } from '../types.ts';
 
 interface CartProps {
   items: CartItem[];
@@ -18,7 +18,7 @@ const Cart: React.FC<CartProps> = ({ items, onRemove, onUpdateQty, onClose, onCh
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose}></div>
       <div className="relative w-full max-w-md bg-slate-950 h-full shadow-2xl flex flex-col border-l border-white/10">
         <div className="p-6 border-b border-white/10 flex items-center justify-between">
-          <h2 className="text-2xl font-orbitron font-bold">Your Cart</h2>
+          <h2 className="text-2xl font-orbitron font-bold text-white">Your Cart</h2>
           <button onClick={onClose} className="text-slate-400 hover:text-white">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
           </button>
