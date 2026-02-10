@@ -1,5 +1,5 @@
 
-import { Product } from './types';
+import { Product } from './types.ts';
 
 const generateMockReviews = () => [
   { id: 'r1', user: 'Alex G.', rating: 5, comment: 'Sangat kencang untuk gaming!', date: '2023-10-01' },
