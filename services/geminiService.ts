@@ -2,11 +2,27 @@
 import { GoogleGenAI } from "@google/genai";
 import { ChatMessage } from "../types.ts";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || "" });
+// Menggunakan pengecekan aman untuk process.env di lingkungan browser
+const getApiKey = () => {
+  try {
+    return (typeof process !== 'undefined' && process.env) ? process.env.API_KEY || "" : "";
+  } catch (e) {
+    return "";
+  }
+};
 
 export const getAiResponse = async (history: ChatMessage[], userMessage: string) => {
+  const apiKey = getApiKey();
+  
+  if (!apiKey) {
+    console.error("API Key Gemini tidak ditemukan.");
+    return "Maaf, sistem AI sedang tidak tersedia karena konfigurasi API Key belum lengkap.";
+  }
+
+  const ai = new GoogleGenAI({ apiKey });
+
   try {
-    const chat = ai.models.generateContent({
+    const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
       contents: [
         ...history.map(m => ({
@@ -25,7 +41,6 @@ export const getAiResponse = async (history: ChatMessage[], userMessage: string)
       }
     });
 
-    const response = await chat;
     return response.text || "Mohon maaf, saya sedang mengalami kendala teknis. Ada yang bisa saya bantu lainnya?";
   } catch (error) {
     console.error("Gemini API Error:", error);
